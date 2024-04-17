@@ -1,0 +1,6 @@
+---
+- name: Install Splunk OpenTelemetry Collector
+  hosts: all
+  become: yes
+  roles:
+    - collector

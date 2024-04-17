@@ -1,5 +1,4 @@
 SPLUNK_CONFIG={{ splunk_otel_collector_config }}
-SPLUNK_ACCESS_TOKEN={{ splunk_access_token }}
 SPLUNK_REALM={{ splunk_realm }}
 SPLUNK_API_URL={{ splunk_api_url | default("https://api." + splunk_realm + ".signalfx.com") }}
 SPLUNK_INGEST_URL={{ splunk_ingest_url | default("https://ingest." + splunk_realm + ".signalfx.com") }}
@@ -17,7 +16,6 @@ SPLUNK_HEC_URL={{ splunk_ingest_url + "/v1/log" }}
 {% else %}
 SPLUNK_HEC_URL={{ "https://ingest." + splunk_realm + ".signalfx.com/v1/log" }}
 {% endif %}
-SPLUNK_HEC_TOKEN={{ splunk_hec_token }}
 SPLUNK_MEMORY_TOTAL_MIB={{ splunk_memory_total_mib }}
 {% if splunk_listen_interface is defined and splunk_listen_interface %}
 SPLUNK_LISTEN_INTERFACE={{ splunk_listen_interface }}
