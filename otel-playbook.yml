@@ -1,6 +1,10 @@
 ---
 - name: Install Splunk OpenTelemetry Collector
   hosts: all
-  become: yes
+  become: true
+  tasks:
+  - name: gather ec2 facts
+    action: ec2_facts
+    when: ansible_os_family == "Amazon" and ansible_distribution_version == "2023"
   roles:
     - collector
